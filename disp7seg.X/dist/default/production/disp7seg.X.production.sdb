@@ -13,35 +13,35 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "12 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\delay.c
 [v _delay delay `(v  1 e 1 0 ]
-"6 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\disp7seg.c
+"10 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\disp7seg.c
 [v _display7seg_int display7seg_int `(v  1 e 1 0 ]
-"11
+"15
 [v _display display `(v  1 e 1 0 ]
-"19 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\main.c
+"14 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "352 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-"14 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\main.c
+"6 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\disp7seg.c
 [v _vetor vetor `[16]uc  1 e 16 0 ]
-"19
+"14 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"21
-[v main@cont cont `i  1 a 2 5 ]
-"32
+"16
+[v main@cont cont `i  1 a 2 3 ]
+"27
 } 0
-"6 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\disp7seg.c
+"10 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\disp7seg.c
 [v _display7seg_int display7seg_int `(v  1 e 1 0 ]
 {
-"10
+"14
 } 0
-"11
+"15
 [v _display display `(v  1 e 1 0 ]
 {
 [v display@c c `i  1 p 2 0 ]
-"14
+"18
 } 0
 "12 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\delay.c
 [v _delay delay `(v  1 e 1 0 ]
