@@ -7,7 +7,7 @@ __S3 0 0 ABS 0
 ?_s1 70 0 COMMON 1
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
-__size_of_display7seg_int 0 0 ABS 0
+_display7seg_init 74C 0 CODE 0
 __CFG_BOR4V$BOR40V 0 0 ABS 0
 _main 785 0 CODE 0
 ___sp 0 0 STACK 2
@@ -42,6 +42,7 @@ __Hsfr2 0 0 ABS 0
 __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
 __Lsfr3 0 0 ABS 0
+__size_of_display7seg_init 0 0 ABS 0
 __size_of_botao_init 0 0 ABS 0
 init_fetch0 772 0 CODE 0
 __Hcode 0 0 ABS 0
@@ -57,6 +58,7 @@ __HdataBANK0 0 0 ABS 0
 __LdataBANK0 0 0 ABS 0
 __pdataBANK0 20 0 BANK0 1
 end_of_initialization 7FC 0 CODE 0
+__end_of_display7seg_init 756 0 CODE 0
 __end_of_s1 762 0 CODE 0
 _TRISDbits 88 0 ABS 0
 _PORTDbits 8 0 ABS 0
@@ -95,7 +97,6 @@ __Lcinit 7EE 0 CODE 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
-_display7seg_int 74C 0 CODE 0
 __HidataBANK0 0 0 ABS 0
 __LidataBANK0 0 0 ABS 0
 __CFG_MCLRE$OFF 0 0 ABS 0
@@ -104,7 +105,6 @@ __CFG_FCMEN$OFF 0 0 ABS 0
 __size_of_s1 0 0 ABS 0
 __CFG_BOREN$OFF 0 0 ABS 0
 __CFG_PWRTE$OFF 0 0 ABS 0
-__end_of_display7seg_int 756 0 CODE 0
 __Hend_init 3 0 CODE 0
 __Lend_init 0 0 CODE 0
 _botao_init 747 0 CODE 0
@@ -148,7 +148,7 @@ text2 E98 EAB CODE E98 0
 text3 E8E E97 CODE E8E 0
 %locals
 dist/default/production\disp7seg.X.production.o
-C:\Users\20185147\AppData\Local\Temp\scms.
+C:\Users\20185147\AppData\Local\Temp\s3lk.
 781 7EE 0 CODE 0
 784 7EE 0 CODE 0
 825 7EE 0 CODE 0

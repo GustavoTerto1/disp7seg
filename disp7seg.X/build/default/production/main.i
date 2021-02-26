@@ -2533,7 +2533,7 @@ void delay ( unsigned int t );
 
 
 
-void display7seg_int ( void );
+void display7seg_init ( void );
 void display ( int c );
 void botao_init ( void );
 int s1 (void);
@@ -2545,7 +2545,7 @@ int s0 (void);
 void main(void)
 {
     int cont = 0;
-    display7seg_int();
+    display7seg_init();
     botao_init();
     char estado = 0;
     while(1)

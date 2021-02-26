@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
 "4 ./disp7seg.h
-[; ;./disp7seg.h: 4: void display7seg_int ( void );
-[v _display7seg_int `(v ~T0 @X0 0 ef ]
+[; ;./disp7seg.h: 4: void display7seg_init ( void );
+[v _display7seg_init `(v ~T0 @X0 0 ef ]
 "6
 [; ;./disp7seg.h: 6: void botao_init ( void );
 [v _botao_init `(v ~T0 @X0 0 ef ]
@@ -281,8 +281,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _cont `i ~T0 @X0 1 a ]
 [e = _cont -> 0 `i ]
 "18
-[; ;main.c: 18:     display7seg_int();
-[e ( _display7seg_int ..  ]
+[; ;main.c: 18:     display7seg_init();
+[e ( _display7seg_init ..  ]
 "19
 [; ;main.c: 19:     botao_init();
 [e ( _botao_init ..  ]

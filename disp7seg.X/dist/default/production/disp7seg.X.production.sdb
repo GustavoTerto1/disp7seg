@@ -12,7 +12,7 @@
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "15 C:\Users\20185147\MPLABXProjects\disp7seg\disp7seg.X\disp7seg.c
-[v _display7seg_int display7seg_int `(v  1 e 1 0 ]
+[v _display7seg_init display7seg_init `(v  1 e 1 0 ]
 "25
 [v _botao_init botao_init `(v  1 e 1 0 ]
 "30
@@ -68,7 +68,7 @@
 "33
 } 0
 "15
-[v _display7seg_int display7seg_int `(v  1 e 1 0 ]
+[v _display7seg_init display7seg_init `(v  1 e 1 0 ]
 {
 "20
 } 0

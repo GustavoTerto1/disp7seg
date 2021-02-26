@@ -15,7 +15,7 @@
 void main(void) 
 {
     int cont = 0;
-    display7seg_int();
+    display7seg_init();
     botao_init();
     char estado = 0;
     while(1)
