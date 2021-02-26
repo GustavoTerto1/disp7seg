@@ -3,6 +3,8 @@
 
 void  display7seg_int ( void );
 void display ( int c ); 
-
+void botao_init ( void ); 
+int s1 (void);
+int s0 (void);
 
 #endif

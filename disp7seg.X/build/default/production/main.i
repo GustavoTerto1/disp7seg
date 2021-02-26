@@ -2535,19 +2535,26 @@ void delay ( unsigned int t );
 
 void display7seg_int ( void );
 void display ( int c );
+void botao_init ( void );
+int s1 (void);
+int s0 (void);
 # 12 "main.c" 2
+
 
 
 void main(void)
 {
     int cont = 0;
     display7seg_int();
+    botao_init();
 
     while(1)
     {
-        display(cont );
-        delay( 1000 );
-        cont++;
+        if( s1() == 1 )
+        {
+        display (cont++ );
+
+        }
         if( cont >= 16 )
             cont = 0;
     }
