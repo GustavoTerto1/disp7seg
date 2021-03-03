@@ -9,11 +9,11 @@
 #include <xc.h>
 #include "config.h"
 
-void delay( unsigned int t )
+void delay ( int t )
 {
-    while( t )
-    { 
-        __delay_ms(1);
-          --t;        
-    }  
-}    
+    while ( t )
+    {
+        --t;
+        __delay_ms(1); 
+    }
+}

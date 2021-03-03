@@ -8,9 +8,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "228
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"352
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "1608
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1608:     struct {
 [s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -291,8 +288,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x BOR4V = BOR40V ]
 "18
 [p x WRT = OFF ]
-"11 disp7seg.c
-[; ;disp7seg.c: 11: char vetor[16] = { 0x3F, 0x06, 0x5B, 0x4F,0x66,
+"7 disp7seg.c
+[; ;disp7seg.c: 7: char vetor[16] = { 0x3F, 0x06, 0x5B, 0x4F,
 [v _vetor `uc ~T0 @X0 -> 16 `i e ]
 [i _vetor
 :U ..
@@ -314,92 +311,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 113 `i `uc
 ..
 ]
-"15
-[; ;disp7seg.c: 15: void display7seg_init ( void )
+"12
+[; ;disp7seg.c: 12: void display7seg_init ( void )
 [v _display7seg_init `(v ~T0 @X0 1 ef ]
-"16
-[; ;disp7seg.c: 16: {
+"13
+[; ;disp7seg.c: 13: {
 {
 [e :U _display7seg_init ]
 [f ]
-"17
-[; ;disp7seg.c: 17:     ANSELH = 0;
+"14
+[; ;disp7seg.c: 14:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"18
-[; ;disp7seg.c: 18:     TRISB = 0x00;
+"15
+[; ;disp7seg.c: 15:     TRISB = 0x00;
 [e = _TRISB -> -> 0 `i `uc ]
-"19
-[; ;disp7seg.c: 19:     PORTB = 0x00;
+"16
+[; ;disp7seg.c: 16:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"20
-[; ;disp7seg.c: 20: }
+"17
+[; ;disp7seg.c: 17: }
 [e :UE 138 ]
 }
-"21
-[; ;disp7seg.c: 21: void display ( int c )
-[v _display `(v ~T0 @X0 1 ef1`i ]
-"22
-[; ;disp7seg.c: 22: {
+"19
+[; ;disp7seg.c: 19: void display7seg ( int c )
+[v _display7seg `(v ~T0 @X0 1 ef1`i ]
+"20
+[; ;disp7seg.c: 20: {
 {
-[e :U _display ]
-"21
-[; ;disp7seg.c: 21: void display ( int c )
+[e :U _display7seg ]
+"19
+[; ;disp7seg.c: 19: void display7seg ( int c )
 [v _c `i ~T0 @X0 1 r1 ]
-"22
-[; ;disp7seg.c: 22: {
+"20
+[; ;disp7seg.c: 20: {
 [f ]
-"23
-[; ;disp7seg.c: 23:     PORTD = vetor [c];
-[e = _PORTD -> *U + &U _vetor * -> -> _c `ui `ux -> -> # *U &U _vetor `ui `ux `uc ]
-"24
-[; ;disp7seg.c: 24: }
+"21
+[; ;disp7seg.c: 21:     PORTB = vetor[c];
+[e = _PORTB -> *U + &U _vetor * -> -> _c `ui `ux -> -> # *U &U _vetor `ui `ux `uc ]
+"22
+[; ;disp7seg.c: 22: }
 [e :UE 139 ]
 }
+"24
+[; ;disp7seg.c: 24: void botoes ( void )
+[v _botoes `(v ~T0 @X0 1 ef ]
 "25
-[; ;disp7seg.c: 25: void botao_init (void)
-[v _botao_init `(v ~T0 @X0 1 ef ]
-"26
-[; ;disp7seg.c: 26: {
+[; ;disp7seg.c: 25: {
 {
-[e :U _botao_init ]
+[e :U _botoes ]
 [f ]
+"26
+[; ;disp7seg.c: 26:     TRISDbits.TRISD3 = 1;
+[e = . . _TRISDbits 0 3 -> -> 1 `i `uc ]
 "27
-[; ;disp7seg.c: 27:    TRISDbits.TRISD0 = 1;
-[e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
+[; ;disp7seg.c: 27:     TRISDbits.TRISD2 = 1;
+[e = . . _TRISDbits 0 2 -> -> 1 `i `uc ]
 "28
-[; ;disp7seg.c: 28:    TRISDbits.TRISD1 = 1;
-[e = . . _TRISDbits 0 1 -> -> 1 `i `uc ]
-"29
-[; ;disp7seg.c: 29: }
+[; ;disp7seg.c: 28: }
 [e :UE 140 ]
 }
 "30
-[; ;disp7seg.c: 30: int s1 (void)
-[v _s1 `(i ~T0 @X0 1 ef ]
+[; ;disp7seg.c: 30: int botao1 ( void )
+[v _botao1 `(i ~T0 @X0 1 ef ]
 "31
-[; ;disp7seg.c: 31:   {
+[; ;disp7seg.c: 31: {
 {
-[e :U _s1 ]
+[e :U _botao1 ]
 [f ]
 "32
-[; ;disp7seg.c: 32:     return (PORTDbits.RD1);
-[e ) -> . . _PORTDbits 0 1 `i ]
+[; ;disp7seg.c: 32:     return ( PORTDbits.RD3 );
+[e ) -> . . _PORTDbits 0 3 `i ]
 [e $UE 141  ]
 "33
-[; ;disp7seg.c: 33:   }
+[; ;disp7seg.c: 33: }
 [e :UE 141 ]
 }
 "35
-[; ;disp7seg.c: 35: int s0 (void)
-[v _s0 `(i ~T0 @X0 1 ef ]
+[; ;disp7seg.c: 35: int botao0 ( void )
+[v _botao0 `(i ~T0 @X0 1 ef ]
 "36
 [; ;disp7seg.c: 36: {
 {
-[e :U _s0 ]
+[e :U _botao0 ]
 [f ]
 "37
-[; ;disp7seg.c: 37:    return (PORTDbits.RD0);
-[e ) -> . . _PORTDbits 0 0 `i ]
+[; ;disp7seg.c: 37:     return ( PORTDbits.RD2 );
+[e ) -> . . _PORTDbits 0 2 `i ]
 [e $UE 142  ]
 "38
 [; ;disp7seg.c: 38: }

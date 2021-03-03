@@ -262,38 +262,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [p x WRT = OFF ]
 "12 delay.c
-[; ;delay.c: 12: void delay( unsigned int t )
-[v _delay `(v ~T0 @X0 1 ef1`ui ]
+[; ;delay.c: 12: void delay ( int t )
+[v _delay `(v ~T0 @X0 1 ef1`i ]
 "13
 [; ;delay.c: 13: {
 {
 [e :U _delay ]
 "12
-[; ;delay.c: 12: void delay( unsigned int t )
-[v _t `ui ~T0 @X0 1 r1 ]
+[; ;delay.c: 12: void delay ( int t )
+[v _t `i ~T0 @X0 1 r1 ]
 "13
 [; ;delay.c: 13: {
 [f ]
 "14
-[; ;delay.c: 14:     while( t )
+[; ;delay.c: 14:     while ( t )
 [e $U 139  ]
 [e :U 140 ]
 "15
 [; ;delay.c: 15:     {
 {
 "16
-[; ;delay.c: 16:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;delay.c: 16:         --t;
+[e =- _t -> 1 `i ]
 "17
-[; ;delay.c: 17:           --t;
-[e =- _t -> -> 1 `i `ui ]
+[; ;delay.c: 17:         _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "18
 [; ;delay.c: 18:     }
 }
 [e :U 139 ]
 "14
-[; ;delay.c: 14:     while( t )
-[e $ != _t -> -> 0 `i `ui 140  ]
+[; ;delay.c: 14:     while ( t )
+[e $ != _t -> 0 `i 140  ]
 [e :U 141 ]
 "19
 [; ;delay.c: 19: }

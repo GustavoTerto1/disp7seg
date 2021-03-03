@@ -4,11 +4,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./disp7seg.h: 4: void display7seg_init ( void );
 [v _display7seg_init `(v ~T0 @X0 0 ef ]
 "6
-[; ;./disp7seg.h: 6: void botao_init ( void );
-[v _botao_init `(v ~T0 @X0 0 ef ]
+[; ;./disp7seg.h: 6: void botoes ( void );
+[v _botoes `(v ~T0 @X0 0 ef ]
 "7
-[; ;./disp7seg.h: 7: int s1 (void);
-[v _s1 `(i ~T0 @X0 0 ef ]
+[; ;./disp7seg.h: 7: int botao1 ( void );
+[v _botao1 `(i ~T0 @X0 0 ef ]
+"8
+[; ;./disp7seg.h: 8: int botao0 ( void );
+[v _botao0 `(i ~T0 @X0 0 ef ]
+"5
+[; ;./disp7seg.h: 5: void display7seg ( int c );
+[v _display7seg `(v ~T0 @X0 0 ef1`i ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -268,36 +274,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [p x WRT = OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"15 main.c
-[; ;main.c: 15: void main(void)
+"14 main.c
+[; ;main.c: 14: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"16
-[; ;main.c: 16: {
+"15
+[; ;main.c: 15: {
 {
 [e :U _main ]
 [f ]
-"17
-[; ;main.c: 17:     int cont = 0;
+"16
+[; ;main.c: 16:     int cont = 0;
 [v _cont `i ~T0 @X0 1 a ]
 [e = _cont -> 0 `i ]
+"17
+[; ;main.c: 17:     char estado = 0;
+[v _estado `uc ~T0 @X0 1 a ]
+[e = _estado -> -> 0 `i `uc ]
 "18
 [; ;main.c: 18:     display7seg_init();
 [e ( _display7seg_init ..  ]
 "19
-[; ;main.c: 19:     botao_init();
-[e ( _botao_init ..  ]
-"20
-[; ;main.c: 20:     char estado = 0;
-[v _estado `uc ~T0 @X0 1 a ]
-[e = _estado -> -> 0 `i `uc ]
+[; ;main.c: 19:     botoes();
+[e ( _botoes ..  ]
 "21
-[; ;main.c: 21:     while(1)
+[; ;main.c: 21:     while ( 1 )
 [e :U 140 ]
 "22
 [; ;main.c: 22:     {
 {
 "23
-[; ;main.c: 23:         switch (estado )
+[; ;main.c: 23:         switch ( estado )
 [e $U 143  ]
 "24
 [; ;main.c: 24:         {
@@ -306,31 +312,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 25:             case 0:
 [e :U 144 ]
 "26
-[; ;main.c: 26:                 if( s1 () == 1 )
-[e $ ! == ( _s1 ..  -> 1 `i 145  ]
+[; ;main.c: 26:                     if( botao1() == 1 )
+[e $ ! == ( _botao1 ..  -> 1 `i 145  ]
 "27
-[; ;main.c: 27:                    estado = 1;
+[; ;main.c: 27:                         estado = 1;
 [e = _estado -> -> 1 `i `uc ]
 [e :U 145 ]
 "28
-[; ;main.c: 28:                 break;
-[e $U 142  ]
-"30
-[; ;main.c: 30:             case 1:
+[; ;main.c: 28:                     if( botao0() == 1)
+[e $ ! == ( _botao0 ..  -> 1 `i 146  ]
+"29
+[; ;main.c: 29:                         estado = 3;
+[e = _estado -> -> 3 `i `uc ]
 [e :U 146 ]
+"30
+[; ;main.c: 30:                     break;
+[e $U 142  ]
 "31
-[; ;main.c: 31:                     if (s1 () == 0 )
-[e $ ! == ( _s1 ..  -> 0 `i 147  ]
-"32
-[; ;main.c: 32:                         estado = 2;
-[e = _estado -> -> 2 `i `uc ]
+[; ;main.c: 31:             case 1:
 [e :U 147 ]
+"32
+[; ;main.c: 32:                     if ( botao1() == 0 )
+[e $ ! == ( _botao1 ..  -> 0 `i 148  ]
 "33
-[; ;main.c: 33:                     break;
+[; ;main.c: 33:                         estado = 2;
+[e = _estado -> -> 2 `i `uc ]
+[e :U 148 ]
+"34
+[; ;main.c: 34:                     break;
 [e $U 142  ]
 "35
 [; ;main.c: 35:             case 2:
-[e :U 148 ]
+[e :U 149 ]
 "36
 [; ;main.c: 36:                     ++cont;
 [e =+ _cont -> 1 `i ]
@@ -341,36 +354,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 38:                     break;
 [e $U 142  ]
 "39
-[; ;main.c: 39:         }
+[; ;main.c: 39:             case 3:
+[e :U 150 ]
+"40
+[; ;main.c: 40:                 if ( botao0() == 0 )
+[e $ ! == ( _botao0 ..  -> 0 `i 151  ]
+"41
+[; ;main.c: 41:                     estado = 4;
+[e = _estado -> -> 4 `i `uc ]
+[e :U 151 ]
+"42
+[; ;main.c: 42:                     break;
+[e $U 142  ]
+"43
+[; ;main.c: 43:             case 4:
+[e :U 152 ]
+"44
+[; ;main.c: 44:                     --cont;
+[e =- _cont -> 1 `i ]
+"45
+[; ;main.c: 45:                     estado = 0;
+[e = _estado -> -> 0 `i `uc ]
+"46
+[; ;main.c: 46:                     break;
+[e $U 142  ]
+"47
+[; ;main.c: 47:         }
 }
 [e $U 142  ]
 [e :U 143 ]
 [e [\ -> _estado `i , $ -> 0 `i 144
- , $ -> 1 `i 146
- , $ -> 2 `i 148
+ , $ -> 1 `i 147
+ , $ -> 2 `i 149
+ , $ -> 3 `i 150
+ , $ -> 4 `i 152
  142 ]
 [e :U 142 ]
-"42
-[; ;main.c: 42:         if( cont >= 16 )
-[e $ ! >= _cont -> 16 `i 149  ]
-"43
-[; ;main.c: 43:             cont = 0;
+"48
+[; ;main.c: 48:         display7seg( cont );
+[e ( _display7seg (1 _cont ]
+"50
+[; ;main.c: 50:         if ( cont >= 10 )
+[e $ ! >= _cont -> 10 `i 153  ]
+"51
+[; ;main.c: 51:             cont = 0;
 [e = _cont -> 0 `i ]
-[e :U 149 ]
-"44
-[; ;main.c: 44:         if( cont< 0 )
-[e $ ! < _cont -> 0 `i 150  ]
-"45
-[; ;main.c: 45:             cont = 9;
+[e :U 153 ]
+"53
+[; ;main.c: 53:         if ( cont < 0 )
+[e $ ! < _cont -> 0 `i 154  ]
+"54
+[; ;main.c: 54:             cont = 9;
 [e = _cont -> 9 `i ]
-[e :U 150 ]
-"46
-[; ;main.c: 46:     }
+[e :U 154 ]
+"55
+[; ;main.c: 55:         }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"47
-[; ;main.c: 47: }
+"58
+[; ;main.c: 58: }
 [e :UE 138 ]
 }

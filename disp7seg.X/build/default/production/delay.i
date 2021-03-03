@@ -2523,11 +2523,11 @@ extern __bank0 __bit __timeout;
 # 10 "delay.c" 2
 
 
-void delay( unsigned int t )
+void delay ( int t )
 {
-    while( t )
+    while ( t )
     {
+        --t;
         _delay((unsigned long)((1)*(4000000/4000.0)));
-          --t;
     }
 }

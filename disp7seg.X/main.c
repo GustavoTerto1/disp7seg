@@ -10,38 +10,49 @@
 #include "config.h"
 #include "delay.h"
 #include "disp7seg.h"
-  
 
 void main(void) 
 {
     int cont = 0;
-    display7seg_init();
-    botao_init();
     char estado = 0;
-    while(1)
+    display7seg_init();
+    botoes();
+    
+    while ( 1 )
     {
-        switch (estado )
+        switch ( estado )
         {
             case 0:
-                if( s1 () == 1 )
-                   estado = 1;
-                break;
-                
-            case 1:    
-                    if (s1 () == 0 )
+                    if( botao1() == 1 )
+                        estado = 1;
+                    if( botao0() == 1)
+                        estado = 3;
+                    break;
+            case 1:
+                    if ( botao1() == 0 )
                         estado = 2;
                     break;
-                    
             case 2:
                     ++cont;
                     estado = 0;
                     break;
-        }        
-        
-        
-        if( cont >= 16 )
+            case 3: 
+                if ( botao0() == 0 )
+                    estado = 4;
+                    break;
+            case 4:
+                    --cont;
+                    estado = 0;
+                    break;
+        } 
+        display7seg( cont );
+
+        if ( cont >= 10 )
             cont = 0;
-        if( cont< 0 )
+
+        if ( cont < 0 )
             cont = 9;
-    }   
+        } 
+                    
+
 }
